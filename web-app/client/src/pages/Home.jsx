@@ -13,9 +13,9 @@ const Home = () => {
                 <div>
                     <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight flex items-center justify-center gap-3 mb-4">
                         <MapPin className="text-blue-600" size={48} />
-                        Traffic Analytics System
+                        測速照相數據分析系統
                     </h1>
-                    <p className="text-xl text-gray-500">Select a mode to continue</p>
+                    <p className="text-xl text-gray-500">請選擇模式以繼續</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -27,8 +27,8 @@ const Home = () => {
                             <BarChart3 size={40} />
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600">Analytics Dashboard</h3>
-                            <p className="text-gray-500 mt-2 text-sm">View statistical data, speed camera density, and filter by city.</p>
+                            <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600">數據分析儀表板</h3>
+                            <p className="text-gray-500 mt-2 text-sm">查看測速照相統計數據、密度分佈，並可依縣市進行篩選分析。</p>
                         </div>
                     </button>
 
@@ -40,8 +40,8 @@ const Home = () => {
                             <Car size={40} />
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600">Driving Simulation</h3>
-                            <p className="text-gray-500 mt-2 text-sm">Simulate movement using WASD keys and receive proximity alerts.</p>
+                            <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600">駕駛模擬系統</h3>
+                            <p className="text-gray-500 mt-2 text-sm">使用 W/A/S/D 鍵控制車輛移動，體驗即時測速照相警報功能。</p>
                         </div>
                     </button>
                 </div>
