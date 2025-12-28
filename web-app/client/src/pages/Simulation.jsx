@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Navigation, AlertTriangle, MapPin, Search } from 'lucide-react';
@@ -148,9 +150,16 @@ const Simulation = () => {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:3000/points')
-            .then(res => setCameras(res.data))
-            .catch(err => console.error(err));
+        const fetchCameras = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, "points"));
+                const points = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+                setCameras(points);
+            } catch (err) {
+                console.error("Error fetching cameras:", err);
+            }
+        };
+        fetchCameras();
     }, []);
 
     // Physics Loop

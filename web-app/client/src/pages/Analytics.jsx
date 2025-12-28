@@ -1,5 +1,7 @@
 
 import { useState, useEffect, useMemo } from 'react'
+import { db } from '../firebase'
+import { collection, getDocs } from 'firebase/firestore'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import {
@@ -32,8 +34,9 @@ function Analytics() {
     const fetchData = async () => {
         try {
             setLoading(true)
-            const response = await axios.get('http://localhost:3000/points')
-            setData(response.data)
+            const querySnapshot = await getDocs(collection(db, "points"));
+            const points = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setData(points)
         } catch (error) {
             console.error("Error fetching data", error)
         } finally {

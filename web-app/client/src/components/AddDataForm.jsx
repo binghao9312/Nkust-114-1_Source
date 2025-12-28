@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 import { X } from 'lucide-react';
-import axios from 'axios';
 
 const AddDataForm = ({ onClose, onDataAdded }) => {
     const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const AddDataForm = ({ onClose, onDataAdded }) => {
 
         setLoading(true);
         try {
-            await axios.post('http://localhost:3000/points', formData);
+            await addDoc(collection(db, "points"), formData);
             onDataAdded();
             onClose();
         } catch (error) {
