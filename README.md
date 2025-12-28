@@ -57,8 +57,9 @@
 提供互動式地圖，支援鍵盤控制車輛移動。
 > **控制方式**: `W` (前進), `S` (後退), `A` (左轉), `D` (右轉)
 
-<img width="1194" alt="模擬與警示" src="https://github.com/user-attachments/assets/253a7177-facd-4796-9527-abe9a3aa9406" />  
-<img width="1164" height="813" alt="image" src="https://github.com/user-attachments/assets/482dd732-0a67-4eb8-92b2-041491d56d4a" />
+<img width="100%" alt="模擬與警示" src="https://github.com/user-attachments/assets/253a7177-facd-4796-9527-abe9a3aa9406" />  
+<br/>
+<img width="100%" alt="模擬駕駛視角" src="https://github.com/user-attachments/assets/482dd732-0a67-4eb8-92b2-041491d56d4a" />
 
 
 ---
@@ -68,30 +69,28 @@
 1.  **Clone 專案**
     ```bash
     git clone https://github.com/binghao9312/Nkust-114-1_Source.git
-    cd Nkust-114-1_Source/web-app
+    cd Nkust-114-1_Source
     ```
 
-2.  **安裝依賴 (Frontend)**
-    ```bash
-    cd client
-    npm install
-    ```
+2.  **快速部署 (Optional)**
+    如果您想快速打包並部署到 Firebase，可以直接執行根目錄下的自動腳本：
+    *   **Windows**: 雙擊 `deploy.bat`
 
-3.  **設定環境變數**
-    請在 `client` 目錄下建立 `.env` 檔案並填入您的 Firebase Config：
-    ```env
-    VITE_FIREBASE_API_KEY=your_api_key
-    VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-    VITE_FIREBASE_PROJECT_ID=your_project_id
-    VITE_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
-    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-    VITE_FIREBASE_APP_ID=your_app_id
-    ```
+3.  **手動安裝與執行 (Manual Setup)**
+    
+    *   **安裝依賴**
+        ```bash
+        cd web-app/client
+        npm install
+        ```
 
-4.  **啟動開發伺服器**
-    ```bash
-    npm run dev
-    ```
+    *   **設定環境變數** (可選，目前已內建 Fallback 設定)
+        若需使用自定義專案，請在 `client` 目錄下建立 `.env` 檔案。
+
+    *   **啟動開發伺服器**
+        ```bash
+        npm run dev
+        ```
 
 ---
 

@@ -31,14 +31,22 @@ function Analytics() {
     const [showAddForm, setShowAddForm] = useState(false)
     const [searchTerm, setSearchTerm] = useState('')
 
+    const [error, setError] = useState(null)
+
     const fetchData = async () => {
         try {
             setLoading(true)
+            setError(null)
             const querySnapshot = await getDocs(collection(db, "points"));
+            if (querySnapshot.empty) {
+                console.warn("Firestore collection 'points' is empty.");
+            }
             const points = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            console.log(`Fetched ${points.length} points from Firestore.`);
             setData(points)
-        } catch (error) {
-            console.error("Error fetching data", error)
+        } catch (err) {
+            console.error("Error fetching data:", err)
+            setError(err.message)
         } finally {
             setLoading(false)
         }
@@ -118,8 +126,25 @@ function Analytics() {
         return data.filter(item => item.limit == speedLimitFilter).length;
     }, [data, speedLimitFilter]);
 
-    if (loading && data.length === 0) {
+    if (loading) {
         return <div className="min-h-screen flex items-center justify-center text-gray-500">Loading data...</div>
+    }
+
+    if (error) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center text-red-600 gap-4">
+                <div className="text-xl font-bold">載入資料失敗</div>
+                <div className="p-4 bg-red-50 rounded-lg border border-red-200 font-mono text-sm">
+                    {error}
+                </div>
+                <button
+                    onClick={fetchData}
+                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                >
+                    重試
+                </button>
+            </div>
+        )
     }
 
     return (
