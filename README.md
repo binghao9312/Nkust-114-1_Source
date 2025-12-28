@@ -1,7 +1,7 @@
 ## 全台測速分析系統
 https://speedy-1f0c9.web.app/  
 
-##本專案已部屬在firebase  
+## 本專案已部屬在firebase  
 ### 資料來源：政府資料開放平台 
 https://data.gov.tw/dataset/7320   
 
