@@ -57,7 +57,9 @@
 提供互動式地圖，支援鍵盤控制車輛移動。
 > **控制方式**: `W` (前進), `S` (後退), `A` (左轉), `D` (右轉)
 
-<img width="1194" alt="模擬與警示" src="https://github.com/user-attachments/assets/253a7177-facd-4796-9527-abe9a3aa9406" />
+<img width="1194" alt="模擬與警示" src="https://github.com/user-attachments/assets/253a7177-facd-4796-9527-abe9a3aa9406" />  
+<img width="1164" height="813" alt="image" src="https://github.com/user-attachments/assets/482dd732-0a67-4eb8-92b2-041491d56d4a" />
+
 
 ---
 
