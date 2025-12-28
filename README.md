@@ -12,6 +12,6 @@ https://data.gov.tw/dataset/7320
 <img width="822" height="562" alt="image" src="https://github.com/user-attachments/assets/9a48d721-1d6a-4360-863b-1e6ac204e9bd" />  
 
 ## 分析頁面  
-<img width="1350" height="866" alt="image" src="https://github.com/user-attachments/assets/62df0ea5-cafd-456f-85d7-b819db25922a" />//
-/<img width="1292" height="828" alt="image" src="https://github.com/user-attachments/assets/4c7f013f-a625-4dd5-aace-b9559f35f487" />
+<img width="1350" height="866" alt="image" src="https://github.com/user-attachments/assets/62df0ea5-cafd-456f-85d7-b819db25922a" />  
+<img width="1292" height="828" alt="image" src="https://github.com/user-attachments/assets/4c7f013f-a625-4dd5-aace-b9559f35f487" />  
 
